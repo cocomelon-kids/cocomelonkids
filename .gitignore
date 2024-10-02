@@ -24,4 +24,4 @@ dist-ssr
 *.sw?
 
 # Do not ignore _redirects file in public folder
-!dist/netlify.toml
+!public/netlify.toml
