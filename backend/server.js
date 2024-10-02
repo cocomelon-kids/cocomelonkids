@@ -1,11 +1,12 @@
 const express = require('express');
-const path = require('path');
 const { Pool } = require('pg');
+const path = require('path');
 require('dotenv').config();
 
 const app = express();
 const port = process.env.PORT || 5000;
 
+// PostgreSQL connection setup
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
   ssl: {
@@ -13,8 +14,8 @@ const pool = new Pool({
   },
 });
 
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, '../frontend/dist')));
+// Middleware to serve the Vite frontend
+app.use(express.static(path.join(__dirname, '../frontend/dist'))); // Adjusted path to dist folder
 
 // API route
 app.get('/api', async (req, res) => {
@@ -26,13 +27,11 @@ app.get('/api', async (req, res) => {
   }
 });
 
-// The "catchall" handler: for any request that doesn't
-// match one above, send back React's index.html file.
+// Serve the Vite frontend for any route that isn't API
 app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html'));
+  res.sendFile(path.join(__dirname, '../frontend/dist', 'index.html')); // Adjusted path to index.html
 });
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-
