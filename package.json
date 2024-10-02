@@ -1,0 +1,17 @@
+{
+    "name": "preschool",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "cd backend && node server.js",
+        "client": "cd frontend && npm run dev",
+        "dev": "concurrently \"npm run start\" \"npm run client\""
+    },
+    "dependencies": {
+        "concurrently": "^6.5.1",
+        "dotenv": "^10.0.0",
+        "express": "^4.21.0",
+        "my-project": "file:",
+        "pg": "^8.13.0",
+        "preschool": "file:"
+    }
+}
