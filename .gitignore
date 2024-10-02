@@ -22,3 +22,6 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Do not ignore _redirects file in public folder
+!public/_redirects
