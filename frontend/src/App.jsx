@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Navbar from './screens/Navbar.jsx';
-import CoverPage from './screens/CoverPage.jsx';
-import Curriculum from './screens/Curriculam.jsx';
-import Admissions from './screens/Admissions.jsx';
-import Activities from './screens/Activities.jsx';
-import Contact from './screens/Contact.jsx';
-import Enroll from './Auth.jsx';
+import Navbar from './components/Navbar.jsx';
+import CoverPage from './pages/Home.jsx';
+import Curriculum from './pages/Curriculum.jsx';
+import Blogs from './pages/Blogs.jsx';
+import Fee from './pages/Fee.jsx';
+import Contact from './pages/contact.jsx';
+import Enroll from './pages/Enroll.jsx';
 
 function App() {
   const location = useLocation();
@@ -21,8 +21,8 @@ function App() {
       <Routes>
         <Route path="/" element={<CoverPage />} />
         <Route path="/curriculum" element={<Curriculum />} />
-        <Route path="/admissions" element={<Admissions />} />
-        <Route path="/activities" element={<Activities />} />
+        <Route path="/blogs" element={<Blogs />} />
+        <Route path="/fee" element={<Fee/>} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/enroll-now" element={<Enroll />} />
       </Routes>

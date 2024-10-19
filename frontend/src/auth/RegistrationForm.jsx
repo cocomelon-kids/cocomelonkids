@@ -1,11 +1,14 @@
+// src/Auth/RegistrationForm.jsx
 import React, { useState } from 'react';
 import './FormStyles.css';
 
 const RegistrationForm = () => {
   const [formData, setFormData] = useState({
+    childName: '',
     phone: '',
     password: '',
     confirmPassword: '',
+    program: '',
   });
 
   const handleChange = (e) => {
@@ -19,6 +22,10 @@ const RegistrationForm = () => {
       alert("Passwords don't match");
       return;
     }
+    if (!formData.program) {
+      alert('Please select a program');
+      return;
+    }
     // Handle form submission logic here (e.g., API call to register user)
     console.log('Registration Data:', formData);
   };
@@ -26,6 +33,14 @@ const RegistrationForm = () => {
   return (
     <form className="form" onSubmit={handleSubmit}>
       <h2>Register</h2>
+      <input
+        type="text"
+        name="childName"
+        placeholder="Child's Name"
+        value={formData.childName}
+        onChange={handleChange}
+        required
+      />
       <input
         type="tel"
         name="phone"
@@ -50,6 +65,16 @@ const RegistrationForm = () => {
         onChange={handleChange}
         required
       />
+      <select
+        name="program"
+        value={formData.program}
+        onChange={handleChange}
+        required
+      >
+        <option value="">Select Program</option>
+        <option value="pre-school">Pre-School (1.6 years - 4 years)</option>
+        <option value="daycare">Daycare (6 months - 15 months)</option>
+      </select>
       <button type="submit">Register</button>
     </form>
   );

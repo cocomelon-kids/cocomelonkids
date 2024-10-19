@@ -8,9 +8,10 @@
         "dev": "concurrently \"npm run start\" \"npm run client\""
     },
     "dependencies": {
+        "bcryptjs": "^2.4.3",
         "concurrently": "^6.5.1",
         "dotenv": "^10.0.0",
-        "express": "^4.21.0",
+        "express": "^4.21.1",
         "pg": "^8.13.0",
         "preschool": "file:"
     }
