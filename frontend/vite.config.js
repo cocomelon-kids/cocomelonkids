@@ -5,7 +5,11 @@ import react from '@vitejs/plugin-react';
 export default defineConfig({
   plugins: [react()],
   build: {
-    base: '/',
-    outDir: 'dist', // Ensure build output goes to 'dist' directory
+    base: '/',          // Base path for the application
+    outDir: 'dist',    // Ensure build output goes to 'dist' directory
+    rollupOptions: {
+      // Optional: Customize Rollup options if needed
+      external: ['react-icons'], // Include this if you want to explicitly externalize react-icons
+    },
   },
 });
