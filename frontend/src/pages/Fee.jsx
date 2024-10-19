@@ -1,6 +1,6 @@
 import React from "react";
 import "./Fee.css";
-import { FaRupeeSign } from "react-icons/fa"; // FontAwesome icon for Rupees
+import { FaRupeeSign } from "react-icons/fa";
 
 const Fee = () => {
   const preschoolFees = [
