@@ -13,6 +13,7 @@
         "dotenv": "^10.0.0",
         "express": "^4.21.1",
         "pg": "^8.13.0",
-        "preschool": "file:"
+        "preschool": "file:",
+        "react-icons": "^5.3.0"
     }
 }
